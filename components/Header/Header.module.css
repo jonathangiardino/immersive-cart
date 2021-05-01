@@ -1,0 +1,33 @@
+.header {
+  height: 5rem;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: overline;
+  text-decoration-thickness: 0.15rem;
+  text-decoration-color: rgb(0, 133, 120);
+}
+
+.cart {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15rem;
+  text-underline-offset: 0.15rem;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.cart:hover {
+  color: black;
+  text-decoration-color: rgb(0, 133, 120);
+}
