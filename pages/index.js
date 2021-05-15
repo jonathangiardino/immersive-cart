@@ -20,11 +20,10 @@ export default function Home() {
 
   useEffect(() => {
     const tl = gsap.timeline({
-      defaults: { duration: 1.5, ease: "power2.in" },
+      defaults: { duration: 2, ease: "power4.in" },
     });
     const text = new SplitText(textRef.current, { type: "words, chars" });
     const homeImage = imageRef.current.children[0].children[1];
-
 
     tl.from(maskRef.current, {
       width: "100%",
@@ -32,17 +31,17 @@ export default function Home() {
       .from(
         homeImage,
         {
-          scale: 1.5,
-          duration: 1.3,
+          scaleX: 1.2,
+          scaleY: 1.2,
+          duration: 1.5,
         },
-        "-=1.3"
+        "-=1.5"
       )
       .from(
         text.chars,
         {
           y: 110,
-          skewX: 100,
-          autoAlpha: 0,
+          skewX: 50,
           stagger: 0.01,
           duration: 1.5,
         },
