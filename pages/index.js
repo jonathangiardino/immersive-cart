@@ -32,9 +32,10 @@ export default function Home() {
       .from(
         homeImage,
         {
-          scale: 1.2,
+          scale: 1.5,
+          duration: 1.3,
         },
-        "-=1.5"
+        "-=1.3"
       )
       .from(
         text.chars,
