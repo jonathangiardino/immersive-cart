@@ -17,10 +17,31 @@
 .title {
   margin: 0;
   font-size: 3rem;
+  perspective: 100%;
+  backface-visibility: hidden;
+  overflow-y: hidden;
+  padding: 0 0.5rem;
+  word-wrap: break-word;
 }
 
 .logo {
   text-decoration: overline;
   text-decoration-thickness: 0.25rem;
   color: rgb(0, 133, 120);
+}
+
+.image {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.imageMask {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: white;
 }
