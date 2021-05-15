@@ -19,33 +19,35 @@ export default function Home() {
   const maskRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
+
+    gsap.set(textRef.current, { visibility: "visible" });
+
+    const tl = new gsap.timeline({
       defaults: { duration: 2, ease: "power4.in" },
     });
     const text = new SplitText(textRef.current, { type: "words, chars" });
-    const homeImage = imageRef.current.children[0].children[1];
+    const image = imageRef.current.children[0].children[1];
 
     tl.from(maskRef.current, {
       width: "100%",
     })
       .from(
-        homeImage,
+        image,
         {
-          scaleX: 1.2,
-          scaleY: 1.2,
-          duration: 1.5,
+          scale: 1.5,
         },
-        "-=1.5"
+        "-=2"
       )
       .from(
         text.chars,
         {
           y: 110,
-          skewX: 50,
+          skewX: 20,
           stagger: 0.01,
-          duration: 1.5,
+          autoAlpha: 0,
+          transformOrigin: "50% 50%",
         },
-        "-=1"
+        "-=1.5"
       );
   }, []);
 
